@@ -241,7 +241,7 @@ public class CircuitSim extends Application {
 						}
 					};
 					
-					JavaFXCompatibilityWrapper.platformStartup(startup);
+					Platform.startup(startup);
 				} else {
 					throw exc;
 				}

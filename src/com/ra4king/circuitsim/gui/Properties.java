@@ -686,7 +686,6 @@ public class Properties {
 			tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 			tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 			tableView.setEditable(true);
-			JavaFXCompatibilityWrapper.tableDisableColumnReordering(tableView);
 			
 			TableColumn<MemoryLine, String> address = new TableColumn<>("Address");
 			address.setStyle("-fx-alignment: CENTER-RIGHT; -fx-background-color: lightgray;");
