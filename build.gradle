@@ -6,28 +6,6 @@ plugins {
 
 compileJava.options.encoding = 'UTF-8'
 
-
-def mainClassName = 'com.ra4king.circuitsim.gui.CircuitSim'
-
-// Tell gradle to look for source code and resources in `/src/', not
-// `/src/java/main/'.
-// https://docs.gradle.org/current/userguide/java_plugin.html#sec:working_with_java_source_sets
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src']
-        }
-        resources {
-            srcDirs = ['src']
-        }
-    }
-    test {
-        java {
-            srcDirs = ['tests']
-        }
-    }
-}
-
 // In this section you declare where to find the dependencies of your project
 repositories {
     mavenCentral()
@@ -50,6 +28,8 @@ compileJava {
    sourceCompatibility = 11
    targetCompatibility = 11
 }
+
+def mainClassName = 'com.ra4king.circuitsim.gui.CircuitSim'
 
 jar {
     manifest {
