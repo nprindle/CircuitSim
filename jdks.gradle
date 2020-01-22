@@ -16,12 +16,12 @@ static String compat(String src) {
 project.afterEvaluate {
     tasks.withType(JavaCompile) {
         def version = compat(sourceCompatibility)
-        def jdkHome = System.getenv("JAVA_${version}_HOME")
+        def jdkHome = System.getenv("JAVA_HOME")
 
         if (!jdkHome) {
              throw new GradleException(
-                "Please set path to JDK ${version} using environment " \
-                + "variable \$JAVA_${version}_HOME. (After you do, you may " \
+                "Please set path to JDK 11 using environment " \
+                + "variable \$JAVA_HOME. (After you do, you may " \
                 + "have to kill the gradle daemon with `./gradlew --stop'.)")
         } else {
             options.fork = true
