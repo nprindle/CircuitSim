@@ -1,4 +1,4 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -35,10 +35,10 @@ repositories {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-    compile 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.google.code.gson:gson:2.8.2'
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.+'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:1.+'
 }
 
 compileJava {
@@ -57,7 +57,7 @@ jar {
     // Bundle dependencies with jar
     // See: http://stackoverflow.com/a/4894308
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
 
