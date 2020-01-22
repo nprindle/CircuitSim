@@ -1,13 +1,11 @@
 plugins {
     id 'java-library'
+    id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.8'
 }
 
 compileJava.options.encoding = 'UTF-8'
 
-// Use the mrjar gradle plugin copied from
-// https://github.com/melix/mrjar-gradle/
-apply from: 'jdks.gradle'
 
 def mainClassName = 'com.ra4king.circuitsim.gui.CircuitSim'
 
@@ -56,7 +54,6 @@ compileJava {
 jar {
     manifest {
         attributes(
-            'Multi-Release': 'true',
             'Main-Class': mainClassName
         )
     }
@@ -66,12 +63,4 @@ jar {
     from {
         configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
-}
-
-// Can't use the run task in the application plugin because it doesn't
-// build the multi-platform jar — it just runs the class directly
-task run(type: JavaExec) {
-    dependsOn jar
-    classpath files(jar.archivePath)
-    main = mainClassName
 }
