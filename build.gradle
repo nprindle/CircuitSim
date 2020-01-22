@@ -20,14 +20,9 @@ dependencies {
 }
 
 javafx {
-    version = '11'
     modules = [ 'javafx.controls' ]
 }
 
-compileJava {
-   sourceCompatibility = 11
-   targetCompatibility = 11
-}
 
 def mainClassName = 'com.ra4king.circuitsim.gui.CircuitSim'
 
