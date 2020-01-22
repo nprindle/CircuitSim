@@ -1,4 +1,7 @@
-apply plugin: 'java-library'
+plugins {
+    id 'java-library'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
 
 compileJava.options.encoding = 'UTF-8'
 
@@ -27,7 +30,6 @@ sourceSets {
     }
 }
 
-
 // In this section you declare where to find the dependencies of your project
 repositories {
     mavenCentral()
@@ -39,6 +41,11 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:1.+'
+}
+
+javafx {
+    version = '11'
+    modules = [ 'javafx.controls' ]
 }
 
 compileJava {
