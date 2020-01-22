@@ -884,7 +884,8 @@ public class Properties {
 					}
 				} else if(tableView.getEditingCell() == null &&
 					          (keyEvent.getCode().isLetterKey() || keyEvent.getCode().isDigitKey())) {
-					TablePosition focusedCellPosition = tableView.getFocusModel().getFocusedCell();
+					@SuppressWarnings("unchecked")
+					TablePosition<MemoryLine, ?> focusedCellPosition = (TablePosition<MemoryLine, ?>) tableView.getFocusModel().getFocusedCell();
 					tableView.edit(focusedCellPosition.getRow(), focusedCellPosition.getTableColumn());
 				}
 			});
