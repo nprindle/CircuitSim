@@ -23,8 +23,7 @@ javafx {
     modules = [ 'javafx.controls' ]
 }
 
-
-def mainClassName = 'com.ra4king.circuitsim.gui.CircuitSim'
+def mainClassName = 'com.ra4king.circuitsim.gui.Main'
 
 jar {
     manifest {
