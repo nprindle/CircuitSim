@@ -34,18 +34,3 @@ jlink {
     }
 }
 
-def mainClassName = 'com.ra4king.circuitsim.gui.Main'
-
-jar {
-    manifest {
-        attributes(
-            'Main-Class': mainClassName
-        )
-    }
-
-    // Bundle dependencies with jar
-    // See: http://stackoverflow.com/a/4894308
-    from {
-        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
